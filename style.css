@@ -27,16 +27,20 @@ td {
     border: 1px solid cornflowerblue;
     height: 20px;
     width: 20px;
-    text-align: center;    
+    text-align: center;
 }
 
-td:hover {
-    border: 1px solid cornflowerblue;
-    background-color: cornflowerblue;
-    color: aliceblue;
-    
+@media screen {
 
+    td:hover {
+        border: 1px solid cornflowerblue;
+        background-color: cornflowerblue;
+        color: aliceblue;
+
+
+    }
 }
+
 
 a.btn-reset {
     color: cornflowerblue;
@@ -58,4 +62,3 @@ a.btn-reset:hover {
     background-position: 0 0;
     color: aliceblue;
 }
-
