@@ -40,25 +40,28 @@ function lightUpSimilarCells(cell) {
     for (let j = chekedRowIndex - 1; j < chekedRowIndex + 2; j++) {
 
         for (let i = checkedCellindex - 1; i < checkedCellindex + 2; i++) {
+
             if (i >= 0 && j >= 0) {
                 currentCell = tableNumbers.rows[j].cells[i];
 
-                if (i == checkedCellindex && j == chekedRowIndex) {
-                    currentCell.bgColor = lightUpColor;
-                } 
-                else if (currentCell.bgColor !== lightUpColor){
-                    checkedCellValue = +(currentCell.textContent);                   
-
-                    if (checkedCellValue == +(cell.textContent)) {
+                if (currentCell !== undefined) {
+                    
+                    if (i == checkedCellindex && j == chekedRowIndex) {
                         currentCell.bgColor = lightUpColor;
-                        lightUpSimilarCells(currentCell);
+                    } else if (currentCell.bgColor !== lightUpColor) {
+                        checkedCellValue = +(currentCell.textContent);
+
+                        if (+(currentCell.textContent) == +(cell.textContent)) {
+                            currentCell.bgColor = lightUpColor;
+                            lightUpSimilarCells(currentCell);
+                        }
                     }
-                }                
+                }
+
             }
         }
-    }   
+    }
 }
-
 
 function randomInteger(min, max) {
     var rand = min + Math.random() * (max + 1 - min);
